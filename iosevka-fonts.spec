@@ -1,7 +1,7 @@
 %global         source_name Iosevka
 %global         debug_package %{nil}
 
-Name:           iosevka-fonts
+Name:           iosevka
 Version:        4.0.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
