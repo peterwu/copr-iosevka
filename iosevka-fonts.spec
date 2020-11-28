@@ -50,9 +50,9 @@ npm run build -- ttf::iosevka-fixed
 %install
 %{__rm} -rf %{buildroot}
 
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka/ttf/*.ttf                  -t %{buildroot}%{_datadir}/fonts/iosevka-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term/ttf/*.ttf             -t %{buildroot}%{_datadir}/fonts/iosevka-term-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed/ttf/*.ttf            -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka/ttf/*.ttf       -t %{buildroot}%{_datadir}/fonts/iosevka-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term/ttf/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-fonts
 
 # Iosevka — Monospace, Default
 %files -n iosevka-fonts
