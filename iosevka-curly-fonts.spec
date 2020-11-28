@@ -51,9 +51,9 @@ npm run build -- ttf::iosevka-fixed-curly
 %install
 %{__rm} -rf %{buildroot}
 
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-curly/ttf/*.ttf            -t %{buildroot}%{_datadir}/fonts/iosevka-curly-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term-curly/ttf/*.ttf       -t %{buildroot}%{_datadir}/fonts/iosevka-term-curly-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed-curly/ttf/*.ttf      -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-curly-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-curly/ttf/*.ttf       -t %{buildroot}%{_datadir}/fonts/iosevka-curly-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term-curly/ttf/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-curly-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed-curly/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-curly-fonts
 
 # Iosevka Curly — Monospace, Curly Style
 %files -n iosevka-curly-fonts
