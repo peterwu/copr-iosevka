@@ -17,10 +17,10 @@ BuildRequires:  npm
 BuildRequires:  ttfautohint
 
 %description
-Iosevka is an open-source, sans-serif + slab-serif, monospace + quasi-proportional typeface family, designed for writing code, using in terminals, and preparing technical documents.
+Iosevka is an open-source, sans-serif + slab-serif, monospace + quasi‑proportional typeface family, designed for writing code, using in terminals, and preparing technical documents.
 
 %prep
-%setup -n %{source_name}-%{version}
+%autosetup -n %{source_name}-%{version}
 
 # Iosevka Aile - Quasi-proportional, Sans-serif
 %package -n iosevka-aile-fonts
@@ -30,6 +30,7 @@ Iosevka Quasi-proportional, Sans-serif
 
 %build
 npm install
+
 npm run build -- ttf::iosevka-aile
 
 %clean
