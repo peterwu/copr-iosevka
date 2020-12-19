@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-curly-slab
-Version:        4.0.3
+Version:        4.1.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -72,6 +72,8 @@ npm run build -- ttf::iosevka-fixed-curly-slab
 %{_datadir}/fonts/iosevka-fixed-curly-slab-fonts/*
 
 %changelog
+* Sat Dec 19 09:06:44 EST 2020 Peter Wu - v4.1.0
+- Release v4.1.0
 * Sat Dec 12 09:28:44 EST 2020 Peter Wu - v4.0.3
 - Release v4.0.3
 * Sun Dec 06 10:38:56 EST 2020 Peter Wu - v4.0.2
