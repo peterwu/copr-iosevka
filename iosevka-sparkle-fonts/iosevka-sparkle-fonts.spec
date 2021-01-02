@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-sparkle
-Version:        4.2.0
+Version:        4.3.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -48,6 +48,8 @@ npm run build -- ttf::iosevka-sparkle
 %{_datadir}/fonts/iosevka-sparkle-fonts/*
 
 %changelog
+* Sat Jan 02 13:23:06 EST 2021 Peter Wu - v4.3.0
+- Release v4.3.0
 * Sat Dec 26 09:19:12 EST 2020 Peter Wu - v4.2.0
 - Release v4.2.0
 * Sat Dec 19 18:01:02 EST 2020 Peter Wu - v4.1.1
