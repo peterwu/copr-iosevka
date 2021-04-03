@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-ss01
-Version:        5.1.1
+Version:        5.2.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -72,6 +72,8 @@ npm run build -- ttf::iosevka-fixed-ss01
 %{_datadir}/fonts/iosevka-fixed-ss01-fonts/*
 
 %changelog
+* Sat Apr 03 12:18:18 EDT 2021 Peter Wu - v5.2.0
+- Release v5.2.0
 * Sun Mar 28 19:26:33 EDT 2021 Peter Wu - v5.1.1
 - Release v5.1.1
 * Sat Mar 27 10:53:10 EDT 2021 Peter Wu - v5.1.0
