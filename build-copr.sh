@@ -28,6 +28,7 @@ FONTS=(
   iosevka-ss15
   iosevka-ss16
   iosevka-ss17
+  iosevka-ss18
   iosevka-aile
   iosevka-etoile
   )
