@@ -38,11 +38,12 @@ for f in ${FONTS[@]}; do
   FONT_SUBDIR=${f}-fonts
   FONT_SPEC=${FONT_NAME}-fonts.spec
   copr buildscm --clone-url $CLONE_URL \
-                --commit $COMMITTISH \
-                --subdir $FONT_SUBDIR \
-                --spec $FONT_SPEC \
-                --timeout $TIMEOUT \
-                --enable-net on \
-                --nowait \
+                --commit $COMMITTISH   \
+                --subdir $FONT_SUBDIR  \
+                --spec $FONT_SPEC      \
+                --timeout $TIMEOUT     \
+                --enable-net on        \
+                --background           \
+                --nowait               \
                 $COPR_REPO
 done
