@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-aile
-Version:        8.0.1
+Version:        8.0.2
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -49,6 +49,8 @@ npm run build -- ttf::iosevka-aile
 %{_datadir}/fonts/iosevka-aile-fonts/*
 
 %changelog
+* Tue Jul 27 11:06:57 EDT 2021 Peter Wu - v8.0.2
+- Release v8.0.2
 * Mon Jul 26 12:07:04 EDT 2021 Peter Wu - v8.0.1
 - Release v8.0.1
 * Sun Jul 25 08:08:08 EDT 2021 Peter Wu - v8.0.0
