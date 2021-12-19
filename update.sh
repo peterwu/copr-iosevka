@@ -1,8 +1,8 @@
 #!/bin/bash
 
 author="Peter Wu"
-old_version=11.2.0
-new_version=11.2.1
+old_version=11.2.1
+new_version=11.2.2
 
 today=$(date "+%a %b %d %T %Z %Y")
 content="Release v${new_version}"
