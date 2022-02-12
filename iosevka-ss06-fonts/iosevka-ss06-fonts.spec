@@ -8,7 +8,7 @@ Summary:        Slender typeface for code, from code.
 
 License:        SIL Open Font License Version 1.1
 URL:            https://github.com/be5invis/Iosevka
-Source0:        %{url}/archive/v%{version}.tar.gz
+Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildArch:      noarch
 
