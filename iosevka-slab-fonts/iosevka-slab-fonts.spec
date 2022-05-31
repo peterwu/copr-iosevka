@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-slab
-Version:        15.4.1
+Version:        15.4.2
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -72,6 +72,8 @@ npm run build -- ttf::iosevka-fixed-slab
 %{_datadir}/fonts/iosevka-fixed-slab-fonts/*
 
 %changelog
+* Mon May 30 20:18:30 EDT 2022 Peter Wu - v15.4.2
+- Release v15.4.2
 * Sun May 29 08:37:08 EDT 2022 Peter Wu - v15.4.1
 - Release v15.4.1
 * Sat May 28 20:18:14 EDT 2022 Peter Wu - v15.4.0
