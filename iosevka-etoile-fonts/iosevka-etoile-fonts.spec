@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-etoile
-Version:        16.1.0
+Version:        16.2.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -48,6 +48,8 @@ npm run build -- ttf::iosevka-etoile
 %{_datadir}/fonts/iosevka-etoile-fonts/*
 
 %changelog
+* Sat Sep 10 12:32:32 EDT 2022 Peter Wu - v16.2.0
+- Release v16.2.0
 * Sun Sep 04 13:42:29 EDT 2022 Peter Wu - v16.1.0
 - Release v16.1.0
 * Sun Aug 28 10:35:07 EDT 2022 Peter Wu - v16.0.2
