@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-ss12
-Version:        17.0.2
+Version:        17.0.3
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -72,6 +72,8 @@ npm run build -- ttf::iosevka-fixed-ss12
 %{_datadir}/fonts/iosevka-fixed-ss12-fonts/*
 
 %changelog
+* Sat Jan 14 08:22:03 EST 2023 Peter Wu - v17.0.3
+- Release v17.0.3
 * Tue Dec 27 13:24:32 EST 2022 Peter Wu - v17.0.2
 - Release v17.0.2
 * Sat Dec 24 09:58:31 EST 2022 Peter Wu - v17.0.1
