@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-ss11
-Version:        27.3.5
+Version:        28.0.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -40,9 +40,9 @@ Iosevka Monospace, X Windows Fixed Style
 %build
 npm install
 
-npm run build -- ttf::iosevka-ss11
-npm run build -- ttf::iosevka-term-ss11
-npm run build -- ttf::iosevka-fixed-ss11
+npm run build -- ttf::IosevkaSS11
+npm run build -- ttf::IosevkaTermSS11
+npm run build -- ttf::IosevkaFixedSS11
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -50,9 +50,9 @@ npm run build -- ttf::iosevka-fixed-ss11
 %install
 %{__rm} -rf %{buildroot}
 
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-ss11/ttf/*.ttf       -t %{buildroot}%{_datadir}/fonts/iosevka-ss11-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term-ss11/ttf/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-ss11-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed-ss11/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-ss11-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaSS11/TTF/*.ttf      -t %{buildroot}%{_datadir}/fonts/iosevka-ss11-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaTermSS11/TTF/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-ss11-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaFixedSS11/TTF/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-ss11-fonts
 
 # Iosevka SS11 — Monospace, X Windows Fixed Style
 %files -n iosevka-ss11-fonts
@@ -71,6 +71,8 @@ npm run build -- ttf::iosevka-fixed-ss11
 %{_datadir}/fonts/iosevka-fixed-ss11-fonts/*
 
 %changelog
+* Sat Dec 16 10:14:58 EST 2023 Peter Wu - v28.0.0
+- Release v28.0.0
 * Sat Nov 11 11:20:01 EST 2023 Peter Wu - v27.3.5
 - Release v27.3.5
 * Sat Nov 04 10:10:20 EDT 2023 Peter Wu - v27.3.4

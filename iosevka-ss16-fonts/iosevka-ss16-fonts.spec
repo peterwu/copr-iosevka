@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-ss16
-Version:        27.3.5
+Version:        28.0.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -40,9 +40,9 @@ Iosevka Monospace, PT Mono Style
 %build
 npm install
 
-npm run build -- ttf::iosevka-ss16
-npm run build -- ttf::iosevka-term-ss16
-npm run build -- ttf::iosevka-fixed-ss16
+npm run build -- ttf::IosevkaSS16
+npm run build -- ttf::IosevkaTermSS16
+npm run build -- ttf::IosevkaFixedSS16
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -50,9 +50,9 @@ npm run build -- ttf::iosevka-fixed-ss16
 %install
 %{__rm} -rf %{buildroot}
 
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-ss16/ttf/*.ttf       -t %{buildroot}%{_datadir}/fonts/iosevka-ss16-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term-ss16/ttf/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-ss16-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed-ss16/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-ss16-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaSS16/TTF/*.ttf      -t %{buildroot}%{_datadir}/fonts/iosevka-ss16-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaTermSS16/TTF/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-ss16-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaFixedSS16/TTF/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-ss16-fonts
 
 # Iosevka SS16 — Monospace, PT Mono Style
 %files -n iosevka-ss16-fonts
@@ -71,6 +71,8 @@ npm run build -- ttf::iosevka-fixed-ss16
 %{_datadir}/fonts/iosevka-fixed-ss16-fonts/*
 
 %changelog
+* Sat Dec 16 10:14:58 EST 2023 Peter Wu - v28.0.0
+- Release v28.0.0
 * Sat Nov 11 11:20:01 EST 2023 Peter Wu - v27.3.5
 - Release v27.3.5
 * Sat Nov 04 10:10:20 EDT 2023 Peter Wu - v27.3.4

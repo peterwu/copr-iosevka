@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-curly-slab
-Version:        27.3.5
+Version:        28.0.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -40,9 +40,9 @@ Iosevka Monospace, Curly Style, Slab-serif
 %build
 npm install
 
-npm run build -- ttf::iosevka-curly-slab
-npm run build -- ttf::iosevka-term-curly-slab
-npm run build -- ttf::iosevka-fixed-curly-slab
+npm run build -- ttf::IosevkaCurlySlab
+npm run build -- ttf::IosevkaTermCurlySlab
+npm run build -- ttf::IosevkaFixedCurlySlab
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -50,9 +50,9 @@ npm run build -- ttf::iosevka-fixed-curly-slab
 %install
 %{__rm} -rf %{buildroot}
 
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-curly-slab/ttf/*.ttf       -t %{buildroot}%{_datadir}/fonts/iosevka-curly-slab-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term-curly-slab/ttf/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-curly-slab-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed-curly-slab/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-curly-slab-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaCurlySlab/TTF/*.ttf      -t %{buildroot}%{_datadir}/fonts/iosevka-curly-slab-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaTermCurlySlab/TTF/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-curly-slab-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaFixedCurlySlab/TTF/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-curly-slab-fonts
 
 # Iosevka Curly Slab — Monospace, Curly Style, Slab-serif
 %files -n iosevka-curly-slab-fonts
@@ -71,6 +71,8 @@ npm run build -- ttf::iosevka-fixed-curly-slab
 %{_datadir}/fonts/iosevka-fixed-curly-slab-fonts/*
 
 %changelog
+* Sat Dec 16 10:14:58 EST 2023 Peter Wu - v28.0.0
+- Release v28.0.0
 * Sat Nov 11 11:20:01 EST 2023 Peter Wu - v27.3.5
 - Release v27.3.5
 * Sat Nov 04 10:10:20 EDT 2023 Peter Wu - v27.3.4

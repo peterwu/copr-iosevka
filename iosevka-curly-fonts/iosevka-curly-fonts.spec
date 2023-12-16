@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-curly
-Version:        27.3.5
+Version:        28.0.0
 Release:        1%{?dist}
 Summary:        Slender typeface for code, from code.
 
@@ -40,9 +40,9 @@ Iosevka Monospace, Curly Style
 %build
 npm install
 
-npm run build -- ttf::iosevka-curly
-npm run build -- ttf::iosevka-term-curly
-npm run build -- ttf::iosevka-fixed-curly
+npm run build -- ttf::IosevkaCurly
+npm run build -- ttf::IosevkaTermCurly
+npm run build -- ttf::IosevkaFixedCurly
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -50,9 +50,9 @@ npm run build -- ttf::iosevka-fixed-curly
 %install
 %{__rm} -rf %{buildroot}
 
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-curly/ttf/*.ttf       -t %{buildroot}%{_datadir}/fonts/iosevka-curly-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-term-curly/ttf/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-curly-fonts
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fixed-curly/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-curly-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaCurly/TTF/*.ttf      -t %{buildroot}%{_datadir}/fonts/iosevka-curly-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaTermCurly/TTF/*.ttf  -t %{buildroot}%{_datadir}/fonts/iosevka-term-curly-fonts
+%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/IosevkaFixedCurly/TTF/*.ttf -t %{buildroot}%{_datadir}/fonts/iosevka-fixed-curly-fonts
 
 # Iosevka Curly — Monospace, Curly Style
 %files -n iosevka-curly-fonts
@@ -71,6 +71,8 @@ npm run build -- ttf::iosevka-fixed-curly
 %{_datadir}/fonts/iosevka-fixed-curly-fonts/*
 
 %changelog
+* Sat Dec 16 10:14:58 EST 2023 Peter Wu - v28.0.0
+- Release v28.0.0
 * Sat Nov 11 11:20:01 EST 2023 Peter Wu - v27.3.5
 - Release v27.3.5
 * Sat Nov 04 10:10:20 EDT 2023 Peter Wu - v27.3.4
