@@ -58,17 +58,17 @@ npm run build -- ttf::IosevkaFixedSS02
 %files -n iosevka-ss02-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-ss02-fonts/*
+%{_datadir}/fonts/iosevka-ss02-fonts/
 
 %files -n iosevka-term-ss02-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-term-ss02-fonts/*
+%{_datadir}/fonts/iosevka-term-ss02-fonts/
 
 %files -n iosevka-fixed-ss02-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-fixed-ss02-fonts/*
+%{_datadir}/fonts/iosevka-fixed-ss02-fonts/
 
 %changelog
 * Sat Aug 17 11:54:25 EDT 2024 Peter Wu - v31.3.0
