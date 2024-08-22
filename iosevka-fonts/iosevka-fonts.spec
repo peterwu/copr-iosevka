@@ -57,17 +57,17 @@ npm run build -- ttf::IosevkaFixed
 %files -n iosevka-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-fonts/*
+%{_datadir}/fonts/iosevka-fonts
 
 %files -n iosevka-term-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-term-fonts/*
+%{_datadir}/fonts/iosevka-term-fonts
 
 %files -n iosevka-fixed-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-fixed-fonts/*
+%{_datadir}/fonts/iosevka-fixed-fonts
 
 %changelog
 * Sat Aug 17 11:54:25 EDT 2024 Peter Wu - v31.3.0

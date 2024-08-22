@@ -58,17 +58,17 @@ npm run build -- ttf::IosevkaFixedCurly
 %files -n iosevka-curly-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-curly-fonts/*
+%{_datadir}/fonts/iosevka-curly-fonts
 
 %files -n iosevka-term-curly-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-term-curly-fonts/*
+%{_datadir}/fonts/iosevka-term-curly-fonts
 
 %files -n iosevka-fixed-curly-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-fixed-curly-fonts/*
+%{_datadir}/fonts/iosevka-fixed-curly-fonts
 
 %changelog
 * Sat Aug 17 11:54:25 EDT 2024 Peter Wu - v31.3.0

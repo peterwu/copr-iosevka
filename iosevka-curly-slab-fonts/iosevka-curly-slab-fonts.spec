@@ -58,17 +58,17 @@ npm run build -- ttf::IosevkaFixedCurlySlab
 %files -n iosevka-curly-slab-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-curly-slab-fonts/*
+%{_datadir}/fonts/iosevka-curly-slab-fonts/
 
 %files -n iosevka-term-curly-slab-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-term-curly-slab-fonts/*
+%{_datadir}/fonts/iosevka-term-curly-slab-fonts/
 
 %files -n iosevka-fixed-curly-slab-fonts
 %license LICENSE.md
 %doc README.md
-%{_datadir}/fonts/iosevka-fixed-curly-slab-fonts/*
+%{_datadir}/fonts/iosevka-fixed-curly-slab-fonts/
 
 %changelog
 * Sat Aug 17 11:54:25 EDT 2024 Peter Wu - v31.3.0
