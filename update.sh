@@ -11,6 +11,17 @@ entry="* ${today} ${author} - v${new_version}"
 entry+="\n"
 entry+="- ${content}"
 
-find . -type f -name '*.spec' -exec sed -i          \
+case "$OSTYPE" in
+    darwin*)
+        PREFIX="g"
+        ;;
+    *)
+        PREFIX=""
+        ;;
+esac
+
+SED="${PREFIX}sed"
+
+find . -type f -name '*.spec' -exec ${SED} -i       \
     -e "/Version:/s/${old_version}/${new_version}/" \
     -e "/%changelog/a ${entry}" {} \;
