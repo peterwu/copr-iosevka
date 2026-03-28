@@ -11,17 +11,13 @@ entry="* ${today} ${author} - v${new_version}"
 entry+="\n"
 entry+="- ${content}"
 
-case "$OSTYPE" in
-    darwin*)
-        PREFIX="g"
-        ;;
-    *)
-        PREFIX=""
-        ;;
-esac
-
-SED="${PREFIX}sed"
-
-find . -type f -name '*.spec' -exec ${SED} -i       \
-    -e "/Version:/s/${old_version}/${new_version}/" \
-    -e "/%changelog/a ${entry}" {} \;
+find . -type f -name '*.spec' | while IFS= read -r file; do
+    awk -v old="${old_version}" \
+        -v new="${new_version}" \
+        -v entry="${entry}"     \
+    '
+        /Version:/ { sub(old, new) }
+        /^%changelog/ { print; print entry; next }
+        { print }
+    ' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+done
