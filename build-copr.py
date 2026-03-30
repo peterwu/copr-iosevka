@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
-import subprocess
+from copr.v3 import Client
+from copr.v3.exceptions import CoprRequestException
 
-CLONE_URL   = "https://github.com/peterwu/copr-iosevka.git"
-COMMITTISH  = "main"
-TIMEOUT     = 58000
-COPR_REPO   = "peterwu/iosevka"
+CLONE_URL  = "https://github.com/peterwu/copr-iosevka.git"
+COMMITTISH = "main"
+TIMEOUT    = 58000
+COPR_REPO  = "peterwu/iosevka"
+
+OWNER, PROJECT = COPR_REPO.split("/")
 
 FONTS = [
     "iosevka",
@@ -34,17 +37,25 @@ FONTS = [
     "iosevka-etoile",
 ]
 
+client = Client.create_from_config_file()
+
 for font in FONTS:
-    cmd = [
-        "copr-cli", "buildscm",
-        "--clone-url", CLONE_URL,
-        "--commit",    COMMITTISH,
-        "--subdir",    f"{font}-fonts",
-        "--spec",      f"{font}-fonts.spec",
-        "--timeout",   str(TIMEOUT),
-        "--enable-net", "on",
-        "--background",
-        "--nowait",
-        COPR_REPO,
-    ]
-    subprocess.run(cmd, check=True)
+    print(f"Submitting build for {font}...")
+    try:
+        build = client.build_proxy.create_from_scm(
+            ownername    = OWNER,
+            projectname  = PROJECT,
+            clone_url    = CLONE_URL,
+            committish   = COMMITTISH,
+            subdirectory = f"{font}-fonts",
+            spec         = f"{font}-fonts.spec",
+            buildopts    = {
+                "timeout":    TIMEOUT,
+                "enable_net": True,
+                "background": True,
+            },
+        )
+        print(f"  Build {build.id} submitted")
+    except CoprRequestException as e:
+        print(f"  Failed: {e}")
+        raise
