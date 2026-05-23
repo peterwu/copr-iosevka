@@ -4,7 +4,7 @@
 import argparse
 import re
 import subprocess
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 from copr.v3 import Client
@@ -98,6 +98,11 @@ def update_specs(new_release):
     return spec_files
 
 
+def git_pull():
+    """Pull latest changes before modifying anything."""
+    subprocess.run(["git", "pull", "--ff-only"], check=True)
+
+
 def git_commit_and_push(spec_files, new_release):
     """Stage modified .spec files, commit, and push."""
     for spec_file in spec_files:
@@ -108,6 +113,16 @@ def git_commit_and_push(spec_files, new_release):
         check=True,
     )
     subprocess.run(["git", "push"], check=True)
+
+
+def validate_copr_token():
+    """Verify the COPR token is accepted by the API."""
+    try:
+        client = Client.create_from_config_file()
+        client.base_proxy.auth_check()
+        return client
+    except CoprRequestException as e:
+        raise RuntimeError(f"COPR token invalid or expired: {e}")
 
 
 def submit_build(client, owner, project, font):
@@ -127,10 +142,9 @@ def submit_build(client, owner, project, font):
     )
 
 
-def submit_builds():
+def submit_builds(client):
     """Submit COPR builds for all font variants."""
     owner, project = COPR_REPO.split("/")
-    client = Client.create_from_config_file()
 
     for font in FONTS:
         print(f"  Submitting build for {font}...")
@@ -147,6 +161,13 @@ def main():
     args = parse_args()
     new_release = args.release
 
+    print("==> Pulling latest changes...")
+    git_pull()
+
+    print("==> Validating COPR token...")
+    client = validate_copr_token()
+    print("    Token OK.")
+
     print(f"==> Updating .spec files to v{new_release}...")
     spec_files = update_specs(new_release)
 
@@ -154,11 +175,10 @@ def main():
     git_commit_and_push(spec_files, new_release)
 
     print("==> Submitting COPR builds...")
-    submit_builds()
+    submit_builds(client)
 
     print("==> Done.")
 
 
 if __name__ == "__main__":
     main()
-
