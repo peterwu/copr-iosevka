@@ -4,7 +4,7 @@
 import argparse
 import re
 import subprocess
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
 
 from copr.v3 import Client
@@ -84,7 +84,7 @@ def update_spec(spec_file, old_release, new_release, entry):
 
 def update_specs(new_release):
     """Update all .spec files to the new release version."""
-    spec_files = list(Path(".").rglob("*.spec"))
+    spec_files = list(Path(".").glob("*/*.spec"))
     if not spec_files:
         raise FileNotFoundError("No .spec files found")
 
@@ -105,8 +105,7 @@ def git_pull():
 
 def git_commit_and_push(spec_files, new_release):
     """Stage modified .spec files, commit, and push."""
-    for spec_file in spec_files:
-        subprocess.run(["git", "add", str(spec_file)], check=True)
+    subprocess.run(["git", "add", *map(str, spec_files)], check=True)
 
     subprocess.run(
         ["git", "commit", "-m", f"update to v{new_release}"],
